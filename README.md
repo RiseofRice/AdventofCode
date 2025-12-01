@@ -1,4 +1,4 @@
-# AdventofCode
+# Advent of Code
 
 A collection of solutions for [Advent of Code](https://adventofcode.com/) challenges.
 
@@ -16,7 +16,7 @@ Day 1 involves simulating a circular position tracker. Given a series of movemen
    - A number of steps to move
 3. **Position Calculation**: The position wraps around using modulo 100 arithmetic:
    - Moving right: `position = (position + steps) % 100`
-   - Moving left: `position = (position - steps) % 100`
+   - Moving left: `position = (position - steps) % 100` (Python's modulo handles negative numbers correctly)
 4. **Goal**: Count how many times the position equals 0 after processing an instruction.
 
 ### Key Concepts
