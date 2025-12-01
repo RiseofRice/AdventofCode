@@ -1,6 +1,6 @@
-# Advent of Code
+# Advent of Code 2025
 
-A collection of solutions for [Advent of Code](https://adventofcode.com/) challenges.
+A collection of solutions for [Advent of Code 2025](https://adventofcode.com/) challenges.
 
 ## Day 1
 
