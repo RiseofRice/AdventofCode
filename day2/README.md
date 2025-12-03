@@ -45,6 +45,41 @@ For example:
 - `12345` → odd length → **False** (valid ID)
 - `1234` → `"12"` != `"34"` → **False** (valid ID)
 
+The `solve_day2` function performs the core calculation by iterating through all ranges and summing invalid IDs:
+
+```python
+def solve_day2(input_string):
+    ranges = input_string.strip().split(',')
+    total_sum = 0
+    found_count = 0
+
+    for range_str in ranges:
+        if not range_str:
+            continue
+        start_str, end_str = range_str.split('-')
+        start = int(start_str)
+        end = int(end_str)
+
+        for num in range(start, end + 1):
+            s = str(num)
+            n = len(s)
+            
+            if n % 2 == 0:
+                half = n // 2
+                if s[:half] == s[half:]:
+                    total_sum += num
+                    found_count += 1
+
+    return total_sum
+```
+
+This function:
+1. Parses the comma-separated ranges from the input
+2. Iterates through each number in every range
+3. Inlines the doubled-pattern check (duplicating the logic from `is_invalid_id` to avoid function call overhead)
+4. Tracks the count of invalid IDs found in `found_count` for console output reporting
+5. Accumulates and returns the sum of all invalid IDs
+
 ### Example
 
 Given the range `1000-1100`:
